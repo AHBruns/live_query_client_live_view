@@ -11,7 +11,8 @@ defmodule LiveQueryClientLiveView.MixProject do
         links: %{
           "Source Code" => "https://github.com/AHBruns/live_query_client_live_view",
           "GitHub" => "https://github.com/AHBruns/live_query_client_live_view"
-        }
+        },
+        files: ~w(lib .formatter.exs mix.exs)
       ],
       docs: [
         main: "LiveQuery.Clients.LiveView"
