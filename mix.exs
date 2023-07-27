@@ -17,7 +17,7 @@ defmodule LiveQueryClientLiveView.MixProject do
       docs: [
         main: "LiveQuery.Clients.LiveView"
       ],
-      version: "0.1.0",
+      version: "0.1.1",
       source_url: "https://github.com/AHBruns/live_query_client_live_view",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,

@@ -56,14 +56,14 @@ defmodule LiveQuery.Clients.LiveView do
          newly_used_query_keys =
            state.read_queries
            |> Map.keys()
-           |> Enum.filter(fn query_key ->
+           |> Enum.reject(fn query_key ->
              Map.has_key?(state.used_queries, query_key)
            end)
 
          newly_unused_query_keys =
            state.used_queries
            |> Map.keys()
-           |> Enum.filter(fn query_key ->
+           |> Enum.reject(fn query_key ->
              Map.has_key?(state.read_queries, query_key)
            end)
 
