@@ -49,8 +49,6 @@ defmodule LiveQuery.Clients.LiveView do
      end)
      |> attach_hook(__MODULE__, :after_render, fn
        socket ->
-         # todo : house keeping
-
          state = Process.get(process_dict_key)
 
          newly_used_query_keys =
@@ -168,13 +166,14 @@ defmodule LiveQuery.Clients.LiveView do
           selector: &Function.identity/1
         )
 
-      Map.update!(state, :read_queries, fn read_queries ->
-        Map.put(read_queries, query_key, %{
-          query_def: query_def,
-          query_config: query_config,
-          value: value
-        })
-      end)
+      state =
+        Map.update!(state, :read_queries, fn read_queries ->
+          Map.put(read_queries, query_key, %{
+            query_def: query_def,
+            query_config: query_config,
+            value: value
+          })
+        end)
 
       Process.put(process_dict_key, state)
 
