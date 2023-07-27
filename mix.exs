@@ -17,7 +17,7 @@ defmodule LiveQueryClientLiveView.MixProject do
       docs: [
         main: "LiveQuery.Clients.LiveView"
       ],
-      version: "0.1.2",
+      version: "0.1.3",
       source_url: "https://github.com/AHBruns/live_query_client_live_view",
       elixir: "~> 1.14",
       start_permanent: Mix.env() == :prod,
@@ -37,7 +37,7 @@ defmodule LiveQueryClientLiveView.MixProject do
       {:floki, ">= 0.30.0", only: :test},
       {:phx_test, "~> 0.1.0", only: [:dev, :test]},
       {:live_query, "~> 0.3"},
-      {:phoenix_live_view, "~> 0.19"}
+      {:phoenix_live_view, "~> 0.18"}
     ]
   end
 end
